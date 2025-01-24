@@ -1,5 +1,5 @@
 const quotes_URL = '/api/quotes';
-const exercises_URL = '/api/exercises';
+/* const exercises_URL = '/api/exercises'; */
 
 const getFetch = (url) => {
     return new Promise((resolve, reject) => {
@@ -19,22 +19,30 @@ const getFetch = (url) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Dash Reloader | Lehet jobb lenne külön JS-be tenni
+    const dashReloaders = document.querySelectorAll('.reloadDashboard');
+    dashReloaders.forEach(e => {
+        e.addEventListener('click', () => {
+            location.reload();
+        });
+    });
+
     getFetch(quotes_URL)
         .then((response) => {
             const quoteH2 = document.querySelector('#quotePlace');
-            let randomNum = Math.floor(Math.random() * response.length);
-            
+            let randomNum = Math.floor(Math.random() * response.length);    
             quoteH2.innerHTML = response[randomNum].quote;
         })
         .catch((error) => {
             console.log(error);
         })
 
-    getFetch(exercises_URL)
+    /* getFetch(exercises_URL)
         .then((response) => {
             console.log(response);
         })
         .catch((error) => {
             console.log(error);
-        })
+        }) */
 });

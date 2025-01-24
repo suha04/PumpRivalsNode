@@ -105,4 +105,19 @@ document.addEventListener("DOMContentLoaded", function () {
             updateButtonVisibility();
         });
     });
+
+
+
+
+
+
+    //RELOAD TO DASHBOARD | TALÁN JOBB LENNE KÜLÖN FILE
+    const reloadButton = document.querySelector(".reloadDashboard");
+    reloadButton.addEventListener("click", function () {
+        location.reload();
+    });
 });
+
+
+
+
