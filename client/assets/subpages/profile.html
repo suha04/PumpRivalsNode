@@ -60,30 +60,40 @@
 
         
 
-        <section class="dashTopic options">
+        <form class="dashTopic">
 
-            <input type="button" class="button" value="Edit Profile">
+            <div class="buttonContainer">
+                <input type="button" tabindex="1" class="button" id="editButton" value="Edit Profile">
+            </div>
+            
 
             <div class="bubble">
                 <label for="name"><i class="icon fa-regular fa-user"></i></label>
-                <input id="name" disabled type="text" value="Random Person" aria-label="Full Name">
+                <input disabled id="name" type="text" value="Random Person" aria-label="Full Name">
             </div>
 
             <div class="bubble">
                 <label for="email"><i class="icon fa-regular fa-envelope"></i></label>
-                <input id="email" disabled type="email" value="blablal@example.com" aria-label="Email Address">
+                <input disabled id="email" type="email" value="blablal@example.com" aria-label="Email Address">
             </div>
             
             <div class="bubble">
                 <label for="mobile"><i class="icon fa-solid fa-mobile-screen-button"></i></label>
-                <input id="mobile" disabled type="tel" value="0640373990" aria-label="Mobile Number">
+                <input disabled id="mobile" type="tel" value="0640373990" aria-label="Mobile Number">
             </div>
 
             <div class="bubble">
                 <label for="password"><i class="icon fa-solid fa-lock"></i></label>
-                <input id="password" disabled type="password" value="password" aria-label="Password">
+                <input disabled id="password" type="password" value="password" aria-label="Password">
             </div>
-        </section>
+
+            <div class="buttonContainer">
+                <input type="button" class="button hidden" id="saveButton" value="Save">
+            </div>
+
+           
+           
+        </form>
     </main>
 
     <script src="/assets/js/profile.js"></script>

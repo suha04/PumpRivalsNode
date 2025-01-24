@@ -14,6 +14,11 @@ app.use(express.json());
     res.sendFile(path.join(__dirname, '../client/index.html'));
 }); */
 
+//AUTH SUBPAGE
+app.get('/auth', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/assets/subpages/auth.html'));
+})
+
 //DASHBOARD
 app.get('/dashboard', (req, res) =>{
     res.sendFile(path.join(__dirname, './client/index.html'));
@@ -28,6 +33,8 @@ app.get('/dashboard/training', (req, res) => {
 app.get('/dashboard/profile', (req, res) => {
     res.sendFile(path.join(__dirname, './client/assets/subpages/profile.html'));
 })
+
+
 
 //API ENDPOINTS
 app.get('/api/quotes', (req, res) => {

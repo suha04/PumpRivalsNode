@@ -13,6 +13,7 @@
   --color1: #8D99AE;
   --color2: #e4929c;
   --color3: #D90429;
+  --color4: #a0001b;
 
   /* Font sizes */
   
@@ -221,19 +222,7 @@ main {
   font-size: var(--font-size-bubble-icon);
 }
 
-/* Button Styles */
-.button {
-  cursor: pointer;
-  margin-top: var(--padding-small);
-  border: 0;
-  border-radius: var(--border-radius);
-  text-transform: uppercase;
-  font-size: var(--font-size-medium);
-  background: var(--color3);
-  color: white;
-  font-weight: bold;
-  padding: var(--padding-small);
-}
+
 
 /* Flex Centering Styles */
 .flex-center {
@@ -257,6 +246,92 @@ main {
   color: orange;
   white-space: nowrap;
 }
+
+/* Input styles */
+
+/* Button Styles */
+.button {
+  cursor: pointer;
+  border: 0;
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  font-size: var(--font-size-medium);
+  background: var(--color3);
+  color: white;
+  font-weight: bold;
+  padding: var(--padding-small);
+}
+
+.button:not(.button.alternative):focus,
+.button:not(.button.alternative):hover
+{
+  outline: none;
+  box-shadow: inset 0 0px 10px 5px var(--color4);
+}
+
+.button.alternative
+{
+  background-color: transparent;
+  border: 2px solid var(--color3);
+  color: var(--color3);
+}
+
+.buttonContainer
+{
+  margin-block: var(--padding-small);
+  gap: var(--padding-small);
+  display: flex;
+  flex-direction: column;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--padding-small) / 2);
+    margin: auto;
+    max-width: 500px;
+}
+
+form .bubble
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: var(--border-radius);
+    gap: var(--padding-small);
+    padding: calc(var(--padding-small)/2);
+}
+
+form label
+{
+    padding: calc(var(--padding-small) / 2);
+}
+
+form input
+{
+    --optionPadding: 10px;
+    width: 100%;
+    font-size: var(--font-size-medium);
+    border: none;
+    text-align: center;
+    border-radius: var(--border-radius);
+    padding: var(--optionPadding);
+
+    background-color: var(--);
+}
+
+textarea:focus, input:focus, .button.alternative:hover{
+    outline: none;
+    box-shadow: inset 0 0px 10px 2px var(--color3);
+}
+
+.hidden
+{
+  display: none;
+}
+
+
 
 /* Dark Mode Overrides */
 @media (prefers-color-scheme: dark) {

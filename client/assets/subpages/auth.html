@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pump Rivals | Authentication</title>
+
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/auth.css">
+</head>
+
+<body class="container">
+    <!-- Bottom Navigation -->
+    <!-- <nav class="mainNav">
+        <ul class="row">
+            <li>
+                <a href="/dashboard" aria-label="Dashboard">
+                    <i class="icon fa-solid fa-house"></i>
+                </a>
+            </li>
+            <li>
+                <a href="/dashboard/training" aria-label="Training">
+                    <i class="icon fa-solid fa-dumbbell"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" aria-label="Trophies">
+                    <i class="icon fa-solid fa-trophy"></i>
+                </a>
+            </li>
+            <li>
+                <a class="active reloadDashboard" href="#" aria-label="Profile">
+                    <i class="icon fa-solid fa-user"></i>
+                </a>
+            </li>
+        </ul>
+    </nav> -->
+
+    <!-- Header Section -->
+    <!-- <header class="row">
+        <div class="title container">
+            <h1 class="reloadDashboard pointer">Pump Rivals</h1>
+            <p>Authentication</p>
+        </div>
+    </header> -->
+
+    <!-- Auth Section -->
+    <main class="container auth">
+
+    
+        <div class="dashTopic hidden" id="login">
+
+            
+
+            <form class="bubble">
+                <div class="title">
+                    <h1>Pump Rivals</h1>
+                </div>
+                
+                <h2>LOGIN</h2>
+
+                <input tabindex="1" id="email" type="email" placeholder="Email Address" aria-label="Email Address">
+                
+                <input tabindex="2" id="password" type="password" placeholder="Password" aria-label="Password">
+                
+                <div class="buttonContainer">
+                    <input tabindex="3" type="button" class="button" value="Login">
+                </div>
+
+                <p>Don't have an account? <a tabindex="4" href="#">Register</a></p>
+            </form>
+           
+        </div>
+
+        <div class="dashTopic" id="register">
+
+            
+
+            <form class="bubble">
+                <div class="title">
+                    <h1>Pump Rivals</h1>
+                </div>
+                
+                <h2>Register</h2>
+
+                <input tabindex="1" id="name" type="text" placeholder="Full Name" aria-label="Full Name">
+
+                <input tabindex="2" id="email" type="email" placeholder="Email Address" aria-label="Email Address">
+                
+                <input tabindex="3" id="password" type="password" placeholder="Password" aria-label="Password">
+                
+                <div class="buttonContainer">
+                    <input tabindex="4" type="button" class="button" value="Register">
+                    <input tabindex="5" type="button" class="button alternative" value="Log In as Guest">
+                </div>
+
+                <p>Already registered? <a tabindex="6" href="#">Log In</a></p>
+            </form>
+           
+        </div>
+    </main>
+
+    <script src="/assets/js/auth.js"></script>
+</body>
+
+</html>
