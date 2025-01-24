@@ -35,6 +35,12 @@ app.get('/api/exercises', (req, res) => {
     res.json(exercises);
 });
 
+app.get('/api/taekwondo', (req, res) => {
+    const taekwondo = require('./client/data/taekwondo');
+    res.json(taekwondo);
+})
+
+//CHECKS IF THE SERVER IS RUNNING
 app.listen(port, ip, () => {
     console.log(`Server is running on ${ip}:${port}`);
 });

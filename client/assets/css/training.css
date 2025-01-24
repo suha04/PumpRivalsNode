@@ -77,4 +77,13 @@ main
   border: 2px solid var(--color3);  /* Highlight color */
   box-shadow: 0 0 10px rgba(255, 87, 51, 0.5);
   transition: border-width, box-shadow 0.3s ease-in-out;
+  position: relative;
+}
+
+.fa-xmark
+{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
 }

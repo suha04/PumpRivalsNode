@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (bubble.classList.contains("selected")) {
             // If selected, remove the selection
             bubble.classList.remove("selected");
+            bubble.children[0].classList.add("hidden");
 
             // Hide all topics that come after the current topic
             for (let i = currentTopicIndex + 1; i < dashTopics.length; i++) {
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Add 'selected' class to the clicked bubble
             bubble.classList.add("selected");
+            bubble.children[0].classList.remove("hidden");
 
             // Show the next topic if it exists
             const nextTopic = dashTopics[currentTopicIndex + 1];
@@ -66,11 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
-
-
-
-
-
 
     // Add click event listener to each bubble
     document.querySelectorAll(".bubble").forEach((bubble) => {
