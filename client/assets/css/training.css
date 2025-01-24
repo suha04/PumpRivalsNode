@@ -1,0 +1,80 @@
+main
+{
+  gap: 0;
+}
+
+
+/* New styles for horizontal scrollable scrollArea */
+.scrollArea {
+  display: flex; /* Align children in a row */
+  gap: var(--padding-small); /* Space between the bubbles */
+  overflow-x: auto; /* Enable horizontal scroll */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile */
+  padding-bottom: var(--padding-small); /* Space to avoid cut-off on bottom */
+  scroll-snap-type: x mandatory; /* Snap to each bubble when scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+
+.scrollArea .row {
+
+  cursor: pointer;
+
+  flex-shrink: 0; /* Prevent items from shrinking */
+  width: auto;  /* Allow each row to have its own width */
+
+}
+
+.scrollArea .bubble {
+  min-width: 200px; /* Minimum width for each bubble (can be adjusted) */
+  flex: 0 0 auto; /* Prevent stretching and maintain the bubble's width */
+  scroll-snap-align: start; /* Each bubble aligns to the start of the container */
+
+  text-align: center;
+
+  width: 100%; /* As soon as the row width changes, the bubble changes with it*/
+
+}
+
+.scrollArea .bubble h3
+{
+    text-transform: uppercase;
+}
+
+.scrollArea .bubble ul
+{
+  list-style-type: none;
+  text-align: center;
+  color: var(--color1);
+}
+
+.scrollArea .bubble p
+{
+  text-align: center;
+  color: var(--color1);
+}
+
+.scrollArea:has(.bubble.bubble.selected)
+{
+  overflow: hidden;
+}
+
+.scrollArea:has(.bubble.selected) .bubble:not(.bubble.selected) {
+  display: none;
+}
+
+.hidden
+{
+  display: none;
+}
+
+.row:has(.bubble.selected)
+{
+  width: 100%;
+}
+
+.bubble.selected {
+  border: 2px solid var(--color3);  /* Highlight color */
+  box-shadow: 0 0 10px rgba(255, 87, 51, 0.5);
+  transition: border-width, box-shadow 0.3s ease-in-out;
+}

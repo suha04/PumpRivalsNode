@@ -1,0 +1,323 @@
+const exercises = [
+    {
+        id: 1,
+        exercise: "Push-up",
+        primary_muscle: "Chest",
+        secondary_muscle: ["Triceps", "Shoulders"],
+        description: "Perform a push-up by lowering your chest toward the ground and pushing back up.",
+        image: "ImageURL",
+        equipment: ["Bodyweight"],
+        category: ["Chest"],
+        points: 10
+    },
+    {
+        id: 2,
+        exercise: "Bench Press",
+        primary_muscle: "Chest",
+        secondary_muscle: ["Triceps", "Front Delts"],
+        description: "Lie on a bench and press the barbell or dumbbells upward.",
+        image: "ImageURL",
+        equipment: ["Barbell", "Dumbbells", "Bench"],
+        category: ["Chest"],
+        points: 10
+    },
+    {
+        id: 3,
+        exercise: "Dumbbell Fly",
+        primary_muscle: "Chest",
+        secondary_muscle: [],
+        description: "Lay on a bench, extend arms with dumbbells outward, and bring them together above the chest.",
+        image: "ImageURL",
+        equipment: ["Dumbbells", "Bench"],
+        category: ["Chest"],
+        points: 10
+    },
+    {
+        id: 4,
+        exercise: "Incline Push-up",
+        primary_muscle: "Upper chest",
+        secondary_muscle: ["Shoulders"],
+        description: "Perform a push-up with your hands elevated on a surface.",
+        image: "ImageURL",
+        equipment: ["Bodyweight", "Elevated surface"],
+        category: ["Chest"],
+        points: 10
+    },
+    {
+        id: 5,
+        exercise: "Incline Bench Press",
+        primary_muscle: "Upper chest",
+        secondary_muscle: ["Triceps", "Front Delts"],
+        description: "Lie on an elevated bench and press the barbell or dumbbells upward.",
+        image: "ImageURL",
+        equipment: ["Barbell", "Dumbbells", "Bench"],
+        category: ["Chest"],
+        points: 10
+    },
+    {
+        id: 6,
+        exercise: "Overhead Press",
+        primary_muscle: "Shoulders",
+        secondary_muscle: ["Triceps"],
+        description: "Press a barbell or dumbbells overhead from shoulder height.",
+        image: "ImageURL",
+        equipment: ["Barbell", "Dumbbells"],
+        category: ["Shoulders"],
+        points: 10
+    },
+    {
+        id: 7,
+        exercise: "Lateral Raise",
+        primary_muscle: "Side Deltoids",
+        secondary_muscle: [],
+        description: "Raise dumbbells laterally to shoulder height and lower them back down.",
+        image: "ImageURL",
+        equipment: ["Dumbbells"],
+        category: ["Shoulders"],
+        points: 10
+    },
+    {
+        id: 8,
+        exercise: "Arnold Press",
+        primary_muscle: "Shoulders",
+        secondary_muscle: ["Triceps"],
+        description: "Rotate dumbbells during an overhead press for full shoulder activation.",
+        image: "ImageURL",
+        equipment: ["Dumbbells"],
+        category: ["Shoulders"],
+        points: 10
+    },
+    {
+        id: 9,
+        exercise: "Face Pulls",
+        primary_muscle: "Rear Delts",
+        secondary_muscle: ["Traps"],
+        description: "Use a cable machine to pull toward your face, elbows high.",
+        image: "ImageURL",
+        equipment: ["Cable machine"],
+        category: ["Shoulders"],
+        points: 10
+    },
+    {
+        id: 10,
+        exercise: "Front Raise",
+        primary_muscle: "Front Deltoids",
+        secondary_muscle: [],
+        description: "Raise dumbbells to shoulder height in front of you.",
+        image: "ImageURL",
+        equipment: ["Dumbbells"],
+        category: ["Shoulders"],
+        points: 10
+    },
+    {
+        id: 11,
+        exercise: "Bicep Curl",
+        primary_muscle: "Biceps",
+        secondary_muscle: [],
+        description: "Curl dumbbells or a barbell up toward your shoulders.",
+        image: "ImageURL",
+        equipment: ["Barbell", "Dumbbells"],
+        category: ["Arms"],
+        points: 10
+    },
+    {
+        id: 12,
+        exercise: "Tricep Dips",
+        primary_muscle: "Triceps",
+        secondary_muscle: [],
+        description: "Lower and raise your body using a dip bar or bench.",
+        image: "ImageURL",
+        equipment: ["Dip bars", "Bench"],
+        category: ["Arms"],
+        points: 10
+    },
+    {
+        id: 13,
+        exercise: "Hammer Curl",
+        primary_muscle: "Biceps",
+        secondary_muscle: ["Forearms"],
+        description: "Curl dumbbells with a neutral grip.",
+        image: "ImageURL",
+        equipment: ["Dumbbells"],
+        category: ["Arms"],
+        points: 10
+    },
+    {
+        id: 14,
+        exercise: "Skull Crushers",
+        primary_muscle: "Triceps",
+        secondary_muscle: [],
+        description: "Lower a barbell or dumbbells toward your forehead, then extend your arms.",
+        image: "ImageURL",
+        equipment: ["Barbell", "Dumbbells"],
+        category: ["Arms"],
+        points: 10
+    },
+    {
+        id: 15,
+        exercise: "Concentration Curl",
+        primary_muscle: "Biceps",
+        secondary_muscle: [],
+        description: "Curl a dumbbell while seated, focusing on one arm at a time.",
+        image: "ImageURL",
+        equipment: ["Dumbbells"],
+        category: ["Arms"],
+        points: 10
+    },
+    {
+        id: 16,
+        exercise: "Pull-up",
+        primary_muscle: "Upper back",
+        secondary_muscle: ["Lats", "Biceps"],
+        description: "Pull your body up on a bar until your chin is above the bar.",
+        image: "ImageURL",
+        equipment: ["Pull-up bar"],
+        category: ["Back"],
+        points: 10
+    },
+    {
+        id: 17,
+        exercise: "Bent-over Row",
+        primary_muscle: "Lats",
+        secondary_muscle: ["Rhomboids", "Lower back"],
+        description: "Row a barbell or dumbbells toward your waist while bent over.",
+        image: "ImageURL",
+        equipment: ["Barbell", "Dumbbells"],
+        category: ["Back"],
+        points: 10
+    },
+    {
+        id: 18,
+        exercise: "Deadlift",
+        primary_muscle: "Back",
+        secondary_muscle: ["Glutes", "Hamstrings"],
+        description: "Lift a barbell from the ground to your waist while keeping a straight back.",
+        image: "ImageURL",
+        equipment: ["Barbell"],
+        category: ["Back", "Legs"],
+        points: 10
+    },
+    {
+        id: 19,
+        exercise: "Lat Pulldown",
+        primary_muscle: "Lats",
+        secondary_muscle: [],
+        description: "Pull the bar down to your chest while seated at a lat pulldown machine.",
+        image: "ImageURL",
+        equipment: ["Lat pulldown machine"],
+        category: ["Back"],
+        points: 10
+    },
+    {
+        id: 20,
+        exercise: "Dumbbell Shrugs",
+        primary_muscle: "Traps",
+        secondary_muscle: ["Lats", "Biceps"],
+        description: "Shrug your shoulders while holding dumbbells.",
+        image: "ImageURL",
+        equipment: ["Dumbbells"],
+        category: ["Back"],
+        points: 10
+    },
+    {
+        id: 21,
+        exercise: "Crunches",
+        primary_muscle: "Abs",
+        secondary_muscle: [],
+        description: "Lie on your back and crunch upward using your core.",
+        image: "ImageURL",
+        equipment: ["Bodyweight"],
+        category: ["Abs"],
+        points: 10
+    },
+    {
+        id: 22,
+        exercise: "Plank",
+        primary_muscle: "Core",
+        secondary_muscle: [],
+        description: "Hold a push-up position, keeping your body straight.",
+        image: "ImageURL",
+        equipment: ["Bodyweight"],
+        category: ["Abs"],
+        points: 10
+    },
+    {
+        id: 23,
+        exercise: "Bycicle Crunch",
+        primary_muscle: "Obliques",
+        secondary_muscle: ["Abs"],
+        description: "Alternate touching your elbows to the opposite knee in a crunch position.",
+        image: "ImageURL",
+        equipment: ["Bodyweight"],
+        category: ["Abs"],
+        points: 10
+    },
+    {
+        id: 24,
+        exercise: "Leg Raise",
+        primary_muscle: "Lower abs",
+        secondary_muscle: [],
+        description: "Raise your legs while lying flat on your back.",
+        image: "ImageURL",
+        equipment: ["Bodyweight"],
+        category: ["Abs"],
+        points: 10
+    },
+    {
+        id: 25,
+        exercise: "Russian Twists",
+        primary_muscle: "Obliques",
+        secondary_muscle: [],
+        description: "Twist your torso while seated and holding a weight or none.",
+        image: "ImageURL",
+        equipment: ["Bodyweight", "Dumbbells"],
+        category: ["Abs"],
+        points: 10
+    },
+    {
+        id: 26,
+        exercise: "Squat",
+        primary_muscle: "Quads",
+        secondary_muscle: ["Glutes", "Hamstrings"],
+        description: "Bend your knees and lower your hips while keeping your back straight.",
+        image: "ImageURL",
+        equipment: ["Bodyweight", "Barbell"],
+        category: ["Legs"],
+        points: 10
+    },
+    {
+        id: 27,
+        exercise: "Lunges",
+        primary_muscle: "Quads",
+        secondary_muscle: ["Glutes", "Hamstrings"],
+        description: "Step forward, lowering your back knee toward the ground.",
+        image: "ImageURL",
+        equipment: ["Bodyweight", "Dumbbells"],
+        category: ["Legs"],
+        points: 10
+    },
+    {
+        id: 28,
+        exercise: "Leg Press",
+        primary_muscle: "Quads",
+        secondary_muscle: ["Glutes"],
+        description: "Push weight away using your legs on a leg press machine.",
+        image: "ImageURL",
+        equipment: ["Leg press machine"],
+        category: ["Legs"],
+        points: 10
+    },
+    {
+        id: 29,
+        exercise: "Calf Raise",
+        primary_muscle: "Calves",
+        secondary_muscle: [],
+        description: "Raise your heels off the ground and lower them back.",
+        image: "ImageURL",
+        equipment: ["Bodyweight", "Dumbbells"],
+        category: ["Legs"],
+        points: 10
+    }
+]
+
+module.exports = exercises;

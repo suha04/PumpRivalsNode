@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <title>Pump Rivals | Dashboard</title>
+
+    <!-- DASHBOARD WEBLAP -->
+
+</head>
+
+
+<body class="container">
+    <!-- Bottom Nav -->
+    <nav class="mainNav">
+        <ul class="row">
+            <li>
+                <a class="active" href="#">
+                    <i class="icon fa-solid fa-house"></i>
+                </a>
+            </li>
+            <li>
+                <a href="/dashboard/training"> <!-- GOES TO '/dashboard/training' -->
+                    <i class="icon fa-solid fa-dumbbell"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon fa-solid fa-trophy"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon fa-solid fa-user"></i>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <!-- Welcome User -->
+
+    <header class="row">
+        <div class="title container">
+            <h1>Pump Rivals</h1>
+            <p>Dashboard</p>
+        </div>
+
+
+        <div class="notifications">
+            <a href="#"><i class="icon fa-regular fa-bell"></i></a>
+        </div>
+    </header>
+
+    <!-- Main Dash -->
+
+    <main class="container">
+        <div class="dashTopic">
+            <div class="topicTitle">
+
+                <h2 class="centered">Quote of the Day</h2>
+            </div>
+            <div class="bubble quote">
+                <i class="fa-solid fa-quote-left"></i>
+                <i class="fa-solid fa-quote-right"></i>
+                <h2 id="quotePlace">Sweat is fat crying.</h2>
+            </div>
+        </div>
+
+
+
+        <div class="dashTopic">
+            <div class="topicTitle">
+                <h2>Today's Workout</h2>
+                <h2 style="color: red;">NOT COMPLETED</h2>
+            </div>
+
+
+            <div class="row">
+                <div class="bubble flex-center">
+                    <i class="fa-solid fa-fire bubble-icon"></i>
+                    <h2 style="color: orange;">3 DAYS</h2>
+                    <h3>Streak</h3>
+                </div>
+                <div class="bubble">
+                    <ol class="exercises">
+                        <li>Bench Press <span>100 kg | 5x10</span></li>
+                        <li>Incline Bench Press <span>85 kg | 5x10</span></li>
+                        <li>Bicep Curls <span>45 kg | 5x10</span></li>
+                        <li>Tricep Cable <span>Curls 35kg | 5x10</span></li>
+                    </ol>
+
+                    <input class="button" type="button" value="Start">
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="dashTopic">
+            <div class="topicTitle">
+                <h2>Leaderboard</h2>
+            </div>
+
+
+            <div class="row">
+                <div class="bubble flex-center">
+
+
+
+                    <i class="fa-solid fa-trophy bubble-icon"></i>
+                    <h2 class="rank">Gold IV</h2>
+                    <h3>Current Rank</h3>
+                </div>
+                <div class="bubble">
+                    <h2 class="centered">You have no friends. Find some!</h2>
+
+                    <input class="button" type="button" value="Find Friends">
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </main>
+
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
