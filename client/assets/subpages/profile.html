@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pump Rivals | Profile</title>
+
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/profile.css">
+</head>
+
+<body class="container">
+    <!-- Bottom Navigation -->
+    <nav class="mainNav">
+        <ul class="row">
+            <li>
+                <a href="/dashboard" aria-label="Dashboard">
+                    <i class="icon fa-solid fa-house"></i>
+                </a>
+            </li>
+            <li>
+                <a href="/dashboard/training" aria-label="Training">
+                    <i class="icon fa-solid fa-dumbbell"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" aria-label="Trophies">
+                    <i class="icon fa-solid fa-trophy"></i>
+                </a>
+            </li>
+            <li>
+                <a class="active reloadDashboard" href="#" aria-label="Profile">
+                    <i class="icon fa-solid fa-user"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="row">
+        <div class="title container">
+            <h1 class="reloadDashboard pointer">Pump Rivals</h1>
+            <p>Profile</p>
+        </div>
+        <div class="settings">
+            <a href="#" aria-label="Settings"><i class="icon fa-solid fa-gear"></i></a>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <main class="container">
+        <section class="dashTopic">
+            <div class="bubble profPicBubble">
+                <img draggable="false" src="/assets/imgs/profPicTest.jpg" alt="Profile Picture">
+            </div>
+        </section>
+
+        
+
+        <section class="dashTopic options">
+
+            <input type="button" class="button" value="Edit Profile">
+
+            <div class="bubble">
+                <label for="name"><i class="icon fa-regular fa-user"></i></label>
+                <input id="name" disabled type="text" value="Random Person" aria-label="Full Name">
+            </div>
+
+            <div class="bubble">
+                <label for="email"><i class="icon fa-regular fa-envelope"></i></label>
+                <input id="email" disabled type="email" value="blablal@example.com" aria-label="Email Address">
+            </div>
+            
+            <div class="bubble">
+                <label for="mobile"><i class="icon fa-solid fa-mobile-screen-button"></i></label>
+                <input id="mobile" disabled type="tel" value="0640373990" aria-label="Mobile Number">
+            </div>
+
+            <div class="bubble">
+                <label for="password"><i class="icon fa-solid fa-lock"></i></label>
+                <input id="password" disabled type="password" value="password" aria-label="Password">
+            </div>
+        </section>
+    </main>
+
+    <script src="/assets/js/profile.js"></script>
+</body>
+
+</html>

@@ -24,6 +24,11 @@ app.get('/dashboard/training', (req, res) => {
     res.sendFile(path.join(__dirname, './client/assets/subpages/training.html'));
 })
 
+//PROFILE SUBPAGE
+app.get('/dashboard/profile', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/assets/subpages/profile.html'));
+})
+
 //API ENDPOINTS
 app.get('/api/quotes', (req, res) => {
     const quotes = require('./client/data/quotes');

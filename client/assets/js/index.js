@@ -19,8 +19,6 @@ const getFetch = (url) => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Dash Reloader | Lehet jobb lenne külön JS-be tenni
     const dashReloaders = document.querySelectorAll('.reloadDashboard');
     dashReloaders.forEach(e => {
         e.addEventListener('click', () => {

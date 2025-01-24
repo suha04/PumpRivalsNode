@@ -75,7 +75,7 @@ main
 
 .bubble.selected {
   border: 2px solid var(--color3);  /* Highlight color */
-  box-shadow: inset 0 0 10px rgba(255, 87, 51, 0.5);
+  box-shadow: inset 0 0 10px var(--color3);
   transition: border-width, box-shadow 0.3s ease-in-out;
 
   cursor: auto;
@@ -93,4 +93,9 @@ main
   font-size: var(--font-size-icon);
   color: var(--color3);
   
+}
+
+.pointer
+{
+  cursor: pointer;
 }

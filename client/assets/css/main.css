@@ -59,6 +59,11 @@ ul, ol {
   list-style-position: inside;
 }
 
+input
+{
+  background: var(--primary-color-light);
+}
+
 .icon {
   font-size: var(--font-size-icon);
 }
@@ -89,6 +94,8 @@ ul, ol {
   justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 20px 5px var(--color3);
+
+ 
 }
 
 .mainNav ul {
@@ -276,5 +283,11 @@ main {
 
   .bubble {
     background: var(--secondary-color-dark);
+  }
+
+  input
+  {
+    background: var(--primary-color-dark);
+    color: var(--secondary-color-light);
   }
 }

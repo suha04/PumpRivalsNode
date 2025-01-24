@@ -106,18 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-
-
-
-
-
-    //RELOAD TO DASHBOARD | TALÁN JOBB LENNE KÜLÖN FILE
+    //RELOAD TO DASHBOARD - majd lehet lesz egy külön reload.js fájl
     const reloadButton = document.querySelector(".reloadDashboard");
     reloadButton.addEventListener("click", function () {
-        location.reload();
+        location.href = "/dashboard";
     });
 });
-
-
-
-
