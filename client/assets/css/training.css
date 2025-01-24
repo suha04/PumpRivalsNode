@@ -94,3 +94,8 @@ main
 {
   cursor: pointer;
 }
+
+.bubble img
+{
+  max-height: 200px;
+}
