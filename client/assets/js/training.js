@@ -41,25 +41,28 @@ document.addEventListener("DOMContentLoaded", function () {
         const currentTopicIndex = Array.from(dashTopics).indexOf(currentTopic);
 
         // Check if the clicked bubble is already selected
-        if (bubble.classList.contains("selected")) {
-            // If selected, remove the selection
-            bubble.classList.remove("selected");
-            bubble.children[0].classList.add("hidden");
-
-            // Hide all topics that come after the current topic
-            for (let i = currentTopicIndex + 1; i < dashTopics.length; i++) {
-                dashTopics[i].classList.add("hidden");
-
-                // Remove selection from all bubbles in hidden topics
-                dashTopics[i].querySelectorAll(".bubble").forEach(b => b.classList.remove("selected"));
-            }
-        } else {
-            // Remove 'selected' class from all bubbles in the current topic
-            currentTopic.querySelectorAll(".bubble").forEach(b => b.classList.remove("selected"));
+        if (!bubble.classList.contains("selected")) {
+            // Remove 'selected' class and 'X' from all bubbles in the current topic
+            currentTopic.querySelectorAll(".bubble").forEach(b => {
+                b.classList.remove("selected");
+                const bubbleX = b.querySelector(".fa-xmark");
+                if (bubbleX) bubbleX.remove();
+            });
 
             // Add 'selected' class to the clicked bubble
             bubble.classList.add("selected");
-            bubble.children[0].classList.remove("hidden");
+
+            // Add 'X' icon to the clicked bubble if it doesn't exist
+            if (!bubble.querySelector(".fa-xmark")) {
+                let closeX = document.createElement("i");
+                closeX.classList.add("fa-solid", "fa-xmark");
+                closeX.style.cursor = "pointer";  // Make the "X" clickable
+                closeX.addEventListener("click", function (event) {
+                    event.stopPropagation(); // Prevent bubble click event from triggering
+                    deselectBubble(bubble, currentTopicIndex);
+                });
+                bubble.appendChild(closeX);
+            }
 
             // Show the next topic if it exists
             const nextTopic = dashTopics[currentTopicIndex + 1];
@@ -69,10 +72,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Function to deselect a bubble by clicking the "X" icon
+    function deselectBubble(bubble, currentTopicIndex) {
+        bubble.classList.remove("selected");
+        
+        // Remove the "X" icon
+        const closeX = bubble.querySelector(".fa-xmark");
+        if (closeX) closeX.remove();
+
+        // Hide all topics that come after the current topic
+        for (let i = currentTopicIndex + 1; i < dashTopics.length; i++) {
+            dashTopics[i].classList.add("hidden");
+
+            // Remove selection from all bubbles in hidden topics
+            dashTopics[i].querySelectorAll(".bubble").forEach(b => {
+                b.classList.remove("selected");
+                const bubbleX = b.querySelector(".fa-xmark");
+                if (bubbleX) bubbleX.remove();
+            });
+        }
+
+        // Update submit button visibility
+        updateButtonVisibility();
+    }
+
     // Add click event listener to each bubble
     document.querySelectorAll(".bubble").forEach((bubble) => {
         bubble.addEventListener("click", function () {
-            // Call chooseOptions function with the clicked bubble
             chooseOptions(this);
 
             // Check and update the submit button visibility
