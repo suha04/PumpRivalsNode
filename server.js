@@ -2,39 +2,28 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-/* const router = express.Router(); */
 const ip = '127.0.0.1';
 const port = 5000;
 
-app.use(express.static("client"));
-app.use(express.json());
-
-//ROOT PAGE - Login/Register page
-/* app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/index.html'));
-}); */
-
-//AUTH SUBPAGE
-app.get('/auth', (req, res) => {
+//ROOT PAGE - AUTH PAGE
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './client/assets/subpages/auth.html'));
-})
+});
 
 //DASHBOARD
-app.get('/dashboard', (req, res) =>{
+app.get('/dashboard', (req, res) => {
     res.sendFile(path.join(__dirname, './client/index.html'));
-})
+});
 
 //TRAINING SUBPAGE
 app.get('/dashboard/training', (req, res) => {
     res.sendFile(path.join(__dirname, './client/assets/subpages/training.html'));
-})
+});
 
 //PROFILE SUBPAGE
 app.get('/dashboard/profile', (req, res) => {
     res.sendFile(path.join(__dirname, './client/assets/subpages/profile.html'));
-})
-
-
+});
 
 //API ENDPOINTS
 app.get('/api/quotes', (req, res) => {
@@ -50,7 +39,11 @@ app.get('/api/exercises', (req, res) => {
 app.get('/api/taekwondo', (req, res) => {
     const taekwondo = require('./client/data/taekwondo');
     res.json(taekwondo);
-})
+});
+
+//SERVES, MIDDLEWARES AND MORE
+app.use(express.static("client"));
+app.use(express.json());
 
 //CHECKS IF THE SERVER IS RUNNING
 app.listen(port, ip, () => {

@@ -1,6 +1,6 @@
 body
 {
-    height: 100dvh;
+    height: 100vh;
 
     background: 
     radial-gradient(transparent, black),
@@ -16,7 +16,6 @@ body
     align-items: center;
     height: 100%;
 }
-
 
 a
 {

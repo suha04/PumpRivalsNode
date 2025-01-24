@@ -1,12 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    //! NEM MŰKÖDIK!
-
-    // RELOAD TO DASHBOARD - majd lehet lesz egy külön reload.js fájl
-    const reloadButton = document.querySelector(".reloadDashboard");
-    reloadButton.addEventListener("click", function () {
-        location.href = "/dashboard";
-    });
-
     // EDIT DATA
     const editButton = document.getElementById("editButton");
     const saveButton = document.getElementById("saveButton");
@@ -39,5 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
         inputs.forEach(input => input.setAttribute("disabled", "true"));
         editButton.classList.remove("hidden");
         saveButton.classList.add("hidden");
+    });
+
+    //RELOAD TO DASHBOARD - majd lehet lesz egy külön reload.js fájl
+    const reloadButton = document.querySelector(".reloadDashboard");
+    reloadButton.addEventListener("click", function () {
+        location.href = "/dashboard";
     });
 });

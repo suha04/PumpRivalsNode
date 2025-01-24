@@ -5,107 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pump Rivals | Authentication</title>
-
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/fonts.css">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/auth.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/auth.css">
 </head>
 
 <body class="container">
-    <!-- Bottom Navigation -->
-    <!-- <nav class="mainNav">
-        <ul class="row">
-            <li>
-                <a href="/dashboard" aria-label="Dashboard">
-                    <i class="icon fa-solid fa-house"></i>
-                </a>
-            </li>
-            <li>
-                <a href="/dashboard/training" aria-label="Training">
-                    <i class="icon fa-solid fa-dumbbell"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#" aria-label="Trophies">
-                    <i class="icon fa-solid fa-trophy"></i>
-                </a>
-            </li>
-            <li>
-                <a class="active reloadDashboard" href="#" aria-label="Profile">
-                    <i class="icon fa-solid fa-user"></i>
-                </a>
-            </li>
-        </ul>
-    </nav> -->
-
-    <!-- Header Section -->
-    <!-- <header class="row">
-        <div class="title container">
-            <h1 class="reloadDashboard pointer">Pump Rivals</h1>
-            <p>Authentication</p>
-        </div>
-    </header> -->
-
     <!-- Auth Section -->
-    <main class="container auth">
-
-    
-        <div class="dashTopic hidden" id="login">
-
-            
-
+    <main class="container auth">    
+        <!-- Login Form -->
+        <div class="dashTopic hidden" id="login">        
             <form class="bubble">
                 <div class="title">
                     <h1>Pump Rivals</h1>
-                </div>
-                
+                </div>            
                 <h2>LOGIN</h2>
-
-                <input tabindex="1" id="email" type="email" placeholder="Email Address" aria-label="Email Address">
-                
-                <input tabindex="2" id="password" type="password" placeholder="Password" aria-label="Password">
-                
-                <a tabindex="3" href="#">Forgot your password?</a>
-
+                <input tabindex="1" id="emaiLog" type="email" placeholder="Email Address" aria-label="Email Address">                
+                <input tabindex="2" id="passwordLog" type="password" placeholder="Password" aria-label="Password">                
+                <a tabindex="3" href="#" class="forgotPwA">Forgot your password?</a>                
                 <div class="buttonContainer">
-                    <input tabindex="4" type="button" class="button" value="Login">
+                    <input tabindex="4" id="loginBtn" type="button" class="button" value="Login">
                 </div>
-
-                <p>Don't have an account? <a tabindex="5" href="#">Register</a></p>
-            </form>
-           
+                <p>Don't have an account?
+                <a tabindex="5" class="registerA" href="#">Register</a>
+                </p>
+            </form>           
+        </div>
+        
+        <!-- Forgotten Password Form -->
+        <div class="dashTopic hidden" id="forgotPw">            
+            <form class="bubble">
+                <div class="title">
+                    <h1>Pump Rivals</h1>
+                </div>                
+                <h2>FORGOTTEN PASSWORD</h2>
+                <input tabindex="1" id="emailForg" type="email" placeholder="Email Address" aria-label="Email Address">                            
+                <div class="buttonContainer">
+                    <input tabindex="2" id="forgBtn" type="button" class="button" value="Send">
+                </div>
+                <p>Don't have an account?
+                <a tabindex="3" class="registerA" href="#">Register</a>
+                </p>
+                <p>Remembered your password?
+                <a tabindex="4" class="loginA" href="#" id="backToLoginLink">Back to Login</a>
+                </p>
+            </form>           
         </div>
 
-        <div class="dashTopic" id="register">
-
-            
-
+        <!-- Register Form -->
+        <div class="dashTopic" id="register">            
             <form class="bubble">
                 <div class="title">
                     <h1>Pump Rivals</h1>
-                </div>
-                
-                <h2>Register</h2>
-
-                <input tabindex="1" id="name" type="text" placeholder="Full Name" aria-label="Full Name">
-
-                <input tabindex="2" id="email" type="email" placeholder="Email Address" aria-label="Email Address">
-                
-                <input tabindex="3" id="password" type="password" placeholder="Password" aria-label="Password">
-                
+                </div>                
+                <h2>REGISTER</h2>
+                <input tabindex="1" id="nameReg" type="text" placeholder="Full Name" aria-label="Full Name">
+                <input tabindex="2" id="emailReg" type="email" placeholder="Email Address" aria-label="Email Address">                
+                <input tabindex="3" id="passwordReg" type="password" placeholder="Password" aria-label="Password">                
                 <div class="buttonContainer">
-                    <input tabindex="4" type="button" class="button" value="Register">
-                    <input tabindex="5" type="button" class="button alternative" value="Log In as Guest">
+                    <input tabindex="4" type="button" id="registerBtn" class="button" value="Register">
+                    <input tabindex="5" type="button" id="guestBtn" class="button alternative" value="Log In as Guest">
                 </div>
-
-                <p>Already registered? <a tabindex="6" href="#">Log In</a></p>
-            </form>
-           
+                <p>Already registered? 
+                    <a tabindex="6" class="loginA" href="#">Log In</a>
+                </p>
+            </form>           
         </div>
     </main>
 
+    <!-- JavaScript file -->
     <script src="/assets/js/auth.js"></script>
 </body>
-
 </html>

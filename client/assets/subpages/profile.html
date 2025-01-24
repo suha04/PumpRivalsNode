@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pump Rivals | Profile</title>
-
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../assets/css/fonts.css">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/profile.css">
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/fonts.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/profile.css">
 </head>
 
 <body class="container">
@@ -32,7 +31,7 @@
                 </a>
             </li>
             <li>
-                <a class="active reloadDashboard" href="#" aria-label="Profile">
+                <a class="active" href="#" aria-label="Profile">
                     <i class="icon fa-solid fa-user"></i>
                 </a>
             </li>
@@ -56,47 +55,34 @@
             <div class="bubble profPicBubble">
                 <img draggable="false" src="/assets/imgs/profPicTest.jpg" alt="Profile Picture">
             </div>
-        </section>
-
-        
+        </section>        
 
         <form class="dashTopic">
-
             <div class="buttonContainer">
                 <input type="button" tabindex="1" class="button" id="editButton" value="Edit Profile">
-            </div>
-            
-
+            </div>            
             <div class="bubble">
                 <label for="name"><i class="icon fa-regular fa-user"></i></label>
                 <input disabled id="name" type="text" value="Random Person" aria-label="Full Name">
             </div>
-
             <div class="bubble">
                 <label for="email"><i class="icon fa-regular fa-envelope"></i></label>
                 <input disabled id="email" type="email" value="blablal@example.com" aria-label="Email Address">
             </div>
-            
             <div class="bubble">
                 <label for="mobile"><i class="icon fa-solid fa-mobile-screen-button"></i></label>
                 <input disabled id="mobile" type="tel" value="0640373990" aria-label="Mobile Number">
             </div>
-
             <div class="bubble">
                 <label for="password"><i class="icon fa-solid fa-lock"></i></label>
                 <input disabled id="password" type="password" value="password" aria-label="Password">
             </div>
-
             <div class="buttonContainer">
                 <input type="button" class="button hidden" id="saveButton" value="Save">
-            </div>
-
-           
-           
+            </div>                      
         </form>
     </main>
 
     <script src="/assets/js/profile.js"></script>
 </body>
-
 </html>
