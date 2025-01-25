@@ -10,9 +10,12 @@ main
   gap: var(--padding-small); /* Space between the bubbles */
   overflow-x: auto; /* Enable horizontal scroll */
   -webkit-overflow-scrolling: touch; /* Smooth scrolling for mobile */
-  padding-bottom: var(--padding-small); /* Space to avoid cut-off on bottom */
+  padding: calc(var(--padding-small) / 2); /* Space to avoid cut-off on all sides */
   scroll-snap-type: x mandatory; /* Snap to each bubble when scrolling */
   scroll-behavior: smooth; /* Smooth scrolling */
+
+  scrollbar-width: thin;
+    outline: none; /* Removes focus outline */
 }
 
 
@@ -98,4 +101,10 @@ main
 .bubble img
 {
   max-height: 200px;
+}
+
+button
+{
+  border: 0;
+  color: inherit; /* Without it, itverrides the default color */
 }
