@@ -16,14 +16,14 @@
   --color4: #a0001b;
 
   /* Font sizes */
-  
+
   --font-size-quote: 100px;
   --font-size-bubble-icon: 50px;
   --font-size-icon: 25px;
   --font-size-medium: 15px;
   --font-size-small: 13px;
-  
-  
+
+
 
   /* Padding */
   --padding-small: 20px;
@@ -45,23 +45,29 @@
 }
 
 body {
-  background: var(--primary-color-light); /* Default light mode background */
+  background: var(--primary-color-light);
+  /* Default light mode background */
   width: 100%;
   max-width: 1440px;
   margin: auto;
+
+  background-image: radial-gradient(var(--secondary-color-light) 2px, transparent 0);
+  background-size: 40px 40px;
+
 }
 
 a {
   text-decoration: none;
-  color: var(--font-color-light); /* Default light mode font color */
+  color: var(--font-color-light);
+  /* Default light mode font color */
 }
 
-ul, ol {
+ul,
+ol {
   list-style-position: inside;
 }
 
-input
-{
+input {
   background: var(--primary-color-light);
 }
 
@@ -81,7 +87,7 @@ input
   flex-direction: row;
   width: 100%;
 
- 
+
 }
 
 /* Main Navigation Styles */
@@ -90,7 +96,8 @@ input
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: var(--secondary-color-light); /* Default light mode secondary color */
+  background-color: var(--secondary-color-light);
+  /* Default light mode secondary color */
   width: 100%;
   padding: var(--padding-small);
   max-height: var(--height-mainNav);
@@ -99,7 +106,7 @@ input
   align-items: center;
   box-shadow: 0px 0px 20px 5px var(--color3);
 
- 
+
 }
 
 .mainNav ul {
@@ -168,8 +175,7 @@ main {
   margin-bottom: var(--padding-small);
 }
 
-.topicTitle h2
-{
+.topicTitle h2 {
   width: 100%;
 }
 
@@ -185,7 +191,7 @@ main {
 .quote h2 {
   z-index: 1;
   text-align: center;
-  
+
 }
 
 .quote i {
@@ -193,7 +199,7 @@ main {
   font-size: var(--font-size-quote);
   z-index: 0;
   opacity: .5;
-  
+
 }
 
 .quote i:nth-child(1) {
@@ -213,7 +219,8 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: var(--secondary-color-light); /* Default light mode background */
+  background: var(--secondary-color-light);
+  /* Default light mode background */
   border-radius: calc(var(--border-radius) / 2);
   padding: var(--padding-small);
   flex: 1 1 auto;
@@ -267,71 +274,67 @@ main {
 }
 
 .button:not(.button.alternative):focus,
-.button:not(.button.alternative):hover
-{
-  outline: none;
+.button:not(.button.alternative):hover {
+
+  outline: 2px solid var(--primary-color-dark);
   box-shadow: inset 0 0px 10px 5px var(--color4);
 }
 
-.button.alternative
-{
+.button.alternative {
   background-color: transparent;
   border: 2px solid var(--color3);
   color: var(--color3);
 }
 
-.buttonContainer
-{
+.buttonContainer {
   margin-block: var(--padding-small);
   gap: var(--padding-small);
   display: flex;
   flex-direction: column;
 }
 
-form
-{
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--padding-small) / 2);
-    margin: auto;
-    max-width: 500px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--padding-small) / 2);
+  margin: auto;
+  max-width: 500px;
 }
 
-form .bubble
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-radius: var(--border-radius);
-    gap: var(--padding-small);
-    padding: calc(var(--padding-small)/2);
+form .bubble {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: var(--border-radius);
+  gap: var(--padding-small);
+  padding: calc(var(--padding-small)/2);
 }
 
-form label
-{
-    padding: calc(var(--padding-small) / 2);
+form label {
+  padding: calc(var(--padding-small) / 2);
 }
 
-form input
-{
-    --optionPadding: 10px;
-    width: 100%;
-    font-size: var(--font-size-medium);
-    border: none;
-    text-align: center;
-    border-radius: var(--border-radius);
-    padding: var(--optionPadding);
+form input {
+  --optionPadding: 10px;
+  width: 100%;
+  font-size: var(--font-size-medium);
+  border: none;
+  text-align: center;
+  border-radius: var(--border-radius);
+  padding: var(--optionPadding);
 
-    background-color: var(--);
+  background-color: var(--);
 }
 
-textarea:focus, input:focus, button:focus, button:hover, .button.alternative:hover{
-    outline: none;
-    box-shadow: inset 0 0px 10px 2px var(--color3);
+textarea:focus,
+input:focus,
+button:focus:not(button.selected),
+.button.alternative:hover {
+  outline: 2px solid var(--color3);
+  box-shadow: inset 0 0px 10px 2px var(--color3);
 }
 
-.hidden
-{
+.hidden {
   display: none;
 }
 
@@ -342,6 +345,11 @@ textarea:focus, input:focus, button:focus, button:hover, .button.alternative:hov
   body {
     background: var(--primary-color-dark);
     color: var(--font-color-dark);
+
+    background-image: radial-gradient(var(--secondary-color-dark) 2px, transparent 0);
+    background-size: 40px 40px;
+
+
   }
 
   a {
@@ -364,9 +372,13 @@ textarea:focus, input:focus, button:focus, button:hover, .button.alternative:hov
     background: var(--secondary-color-dark);
   }
 
-  input
-  {
+  input {
     background: var(--primary-color-dark);
     color: var(--secondary-color-light);
+  }
+
+  .button:not(.button.alternative):focus,
+  .button:not(.button.alternative):hover {
+    outline: 2px solid var(--primary-color-light);
   }
 }

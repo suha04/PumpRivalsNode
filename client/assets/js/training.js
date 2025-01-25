@@ -29,9 +29,11 @@ document.addEventListener("DOMContentLoaded", function () {
             currentTopic.querySelectorAll(".bubble").forEach(b => {
                 b.classList.remove("selected");
                 b.querySelector(".fa-xmark")?.remove();
+                b.disabled = false; // Enable other buttons
             });
 
             button.classList.add("selected");
+            button.disabled = true; // Disable the selected button
 
             if (!button.querySelector(".fa-xmark")) {
                 let closeX = document.createElement("i");
@@ -58,12 +60,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function deselectBubble(button, currentTopicIndex) {
         button.classList.remove("selected");
         button.querySelector(".fa-xmark")?.remove();
+        button.disabled = false; // Re-enable the button when deselected
 
         for (let i = currentTopicIndex + 1; i < dashTopics.length; i++) {
             dashTopics[i].classList.add("hidden");
             dashTopics[i].querySelectorAll(".bubble").forEach(b => {
                 b.classList.remove("selected");
                 b.querySelector(".fa-xmark")?.remove();
+                b.disabled = false; // Re-enable other buttons in subsequent topics
             });
         }
 
@@ -94,33 +98,53 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Manage scroll focus for overflow elements
-    document.querySelectorAll(".scrollArea").forEach(area => {
-        area.setAttribute("tabindex", "-1");
+    // Section for Scroll Feature
+    // ==================================================================
+    // To disable the scroll feature, simply comment out the block below.
 
-        area.addEventListener("focusin", function (event) {
-            const focusedElement = event.target;
-            const areaRect = area.getBoundingClientRect();
-            const focusedRect = focusedElement.getBoundingClientRect();
+    const enableScrollFeature = true; // Set this to false if you don't want scroll behavior
 
-            if (focusedRect.right > areaRect.right || focusedRect.left < areaRect.left) {
-                focusedElement.scrollIntoView({
-                    behavior: "smooth",
-                    block: "nearest",
-                    inline: "center"
-                });
-            }
+    if (enableScrollFeature) {
+        // Manage scroll focus for overflow elements
+        document.querySelectorAll(".scrollArea").forEach(area => {
+            area.setAttribute("tabindex", "-1");
+
+            area.addEventListener("focusin", function (event) {
+                const focusedElement = event.target;
+                const areaRect = area.getBoundingClientRect();
+                const focusedRect = focusedElement.getBoundingClientRect();
+
+                if (focusedRect.right > areaRect.right || focusedRect.left < areaRect.left) {
+                    focusedElement.scrollIntoView({
+                        behavior: "smooth",
+                        block: "nearest",
+                        inline: "center"
+                    });
+                }
+            });
+
+            area.addEventListener("click", function () {
+                this.removeAttribute("tabindex");
+                this.focus();
+            });
+
+            area.addEventListener("blur", function () {
+                this.setAttribute("tabindex", "-1");
+            });
+
+            // Scroll to the current scrollArea when it becomes visible
+            area.addEventListener("transitionend", function () {
+                if (!area.classList.contains("hidden")) {
+                    area.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+            });
         });
+    }
 
-        area.addEventListener("click", function () {
-            this.removeAttribute("tabindex");
-            this.focus();
-        });
-
-        area.addEventListener("blur", function () {
-            this.setAttribute("tabindex", "-1");
-        });
-    });
+    // ==================================================================
 
     // Reload to dashboard on header click
     document.querySelector(".reloadDashboard").addEventListener("click", function () {
