@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/dashboard/ranked">
                     <i class="icon fa-solid fa-trophy"></i>
                 </a>
             </li>
@@ -67,16 +67,23 @@
 
         <div class="dashTopic">
             <div class="topicTitle">
-                <h2>Today's Workout</h2>
-                <h2 style="color: red;">NOT COMPLETED</h2>
+                <h2>Calendar</h2>
+                <!-- <h2 style="color: red;">NOT COMPLETED</h2> -->
             </div>
             <div class="row">
-                <div class="bubble flex-center">
-                    <i class="fa-solid fa-fire bubble-icon"></i>
-                    <h2 style="color: orange;">3 DAYS</h2>
-                    <h3>Streak</h3>
+                <div class="calendar">
+                    <div class="header">
+                        <button class="button calendarBtn" id="prev"><i class="fa-solid fa-caret-left"></i></button>
+                        <h2 id="month-year"></h2>
+                        <button class="button calendarBtn" id="next"><i class="fa-solid fa-caret-right"></i></button>
+                    </div>
+                    <div class="weekdays">
+                        <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+                    </div>
+                    <div class="days" id="days"></div>
                 </div>
-                <div class="bubble">
+                
+                <!-- <div class="bubble">
                     <ol class="exercises">
                         <li>Bench Press <span>100 kg | 5x10</span></li>
                         <li>Incline Bench Press <span>85 kg | 5x10</span></li>
@@ -86,7 +93,15 @@
                     <div class="buttonContainer">
                         <input tabindex="1" class="button" type="button" value="Start">
                     </div>                    
+                </div> -->
+                <div class="bubble flex-center">
+                    <i class="fa-solid fa-fire bubble-icon"></i>
+                    <h2 style="color: orange;">3 DAYS</h2>
+                    <h3>Streak</h3>
                 </div>
+            </div>
+            <div class="row">
+                
             </div>
         </div>
         <div class="dashTopic">

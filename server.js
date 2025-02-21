@@ -20,6 +20,11 @@ app.get('/dashboard/training', (req, res) => {
     res.sendFile(path.join(__dirname, './client/assets/subpages/training.html'));
 });
 
+//TRAINING SUBPAGE
+app.get('/dashboard/ranked', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/assets/subpages/ranked.html'));
+});
+
 //PROFILE SUBPAGE
 app.get('/dashboard/profile', (req, res) => {
     res.sendFile(path.join(__dirname, './client/assets/subpages/profile.html'));
@@ -47,5 +52,5 @@ app.use(express.json());
 
 //CHECKS IF THE SERVER IS RUNNING
 app.listen(port, ip, () => {
-    console.log(`Server is running on ${ip}:${port}`);
+    console.log(`Server is running on http://${ip}:${port}`);
 });
